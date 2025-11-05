@@ -1,0 +1,64 @@
+@startuml
+
+class Lector {
+  -Nombre
+  -Dirección
+  -Teléfono
+  +Reservar(material)
+  +Entregar(material)
+}
+
+class Pedido {
+  -ID del usuario
+  +Título del material
+  -Código del material
+  +Reservar(fecha)
+  +Entregar(fecha)
+}
+
+class Bibliotecario {
+  -ID del personal
+  +Reservar(fecha)
+  +Entregar(fecha)
+}
+
+class Libro {
+ -Título del libro
+  +Tipo de libro
+  +Autor
+  +Editorial
+  +Reservar(fecha)
+  +Entregar(fecha)
+}
+
+class Revista {
+  -Título de la revista
+  +Tipo de revista
+  -Autor
+  +Edición
+  +Reservar(fecha)
+  +Entregar(fecha)
+}
+
+class Estudiante {
+  -Código del estudiante
+  +Reservar(libro)
+  +Entregar(libro)
+}
+
+class Docente {
+  -Código del docente
+  +Reservar(libro)
+  -Entregar(libro)
+}
+
+Lector  --* "1" Estudiante
+Lector  --* "1" Docente
+Pedido "1...*" --* Lector
+Lector -- Bibliotecario : Entrega, recibe
+Pedido  -- "1...*" Bibliotecario : maneja
+Pedido -- "1" Libro : necesita
+Pedido -- "1" Revista : necesita
+
+
+@enduml
