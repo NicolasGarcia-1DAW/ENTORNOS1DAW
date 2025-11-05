@@ -13,5 +13,8 @@ public class Main {
 
         System.out.println("Para la persona 1 sabemos que tiene " + persona1.getEdad() + " años.");
 
-    }
+        Libro libro1 = new Libro("Cien años de soledad", "978-84-376-0494-7", "Santillana", "Español", 471, 1967, true);
+
+        libro1.informacion();
+         }
 }
