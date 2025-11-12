@@ -84,13 +84,24 @@ public class Libro {
         }
     }
 
-    public void informacion() {
-    if (disponible) {
-        disponible = "Está disponible";
-    } else {
-        disponible = "No está disponible";
+    public void disponibleSysout() {
+        if (disponible) {
+            System.out.println("Está disponible");
+        }
+        else {
+            System.out.println("No está disponible");
+        }
     }
-    System.out.println("Libro: " + titulo + " - " + editorial + " (" + anyo + "). " + idioma + ", " + numPaginas + " páginas. " + disponible + ".");
+
+    public void informacion() {
+    System.out.print("\nLibro: " + titulo + " - " + editorial + " (" + anyo + "). " + idioma + ", " + numPaginas + " páginas. ");
+        if (disponible) {
+            System.out.println("Está disponible.");
+        }
+        else {
+            System.out.println("No está disponible.");
+        }
+        
     }
 
 }

@@ -15,6 +15,7 @@ public class Main {
 
         Libro libro1 = new Libro("Cien años de soledad", "978-84-376-0494-7", "Santillana", "Español", 471, 1967, true);
 
+        libro1.estaDisponible();
         libro1.informacion();
-         }
+    }
 }
