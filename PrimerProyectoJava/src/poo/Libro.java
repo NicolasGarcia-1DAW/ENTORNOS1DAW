@@ -100,8 +100,6 @@ public class Libro {
         }
         else {
             System.out.println("No está disponible.");
-        }
-        
+        } 
     }
-
 }
