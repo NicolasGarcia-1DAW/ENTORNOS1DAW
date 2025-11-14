@@ -6,15 +6,15 @@ public class PersonaPOO {
      * Definición de atributos de la persona
     /*/
 
-    String nombre;
-    int edad;
-    String direccion;
-    String apellidos;
-    String DNI;
-    String email;
-    int telefono;
-    String profesion;
-    int añosExperiencia;
+    private String nombre;
+    private int edad;
+    private String direccion;
+    private String apellidos;
+    private String DNI;
+    private String email;
+    private int telefono;
+    private String profesion;
+    private int añosExperiencia;
 
     /*
      * Definición del comportamiento de la persona
@@ -29,12 +29,28 @@ public class PersonaPOO {
         System.out.println("Nombre: " + this.nombre + " y edad: " + this.edad + ", en la dirección: " + this.direccion);
     }
 
+    public String getDireccion() {
+        return this.direccion;
+    }
+
     public void setDireccion (String direccion) {
         this.direccion = direccion;
     }
 
-    public int getEdad () {
+    public int getEdad() {
         return this.edad;
+    }
+
+    public void setEdad (int edad) {
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre (String nombre) {
+        this.nombre = nombre;
     }
 
     public void setApellidos(String apellidos) {

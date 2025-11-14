@@ -21,5 +21,8 @@ public class Main {
         Biblioteca biblioteca1 = new Biblioteca("María Teresa León", "Av. de Menesteo, 16 - 11150 El Puerto de Santa María, Cádiz");
         biblioteca1.informacion();
 
+        Sala sala1 = new Sala("Estudio", 5000, true, "estudio", true);
+        sala1.informacion();
+
     }
 }

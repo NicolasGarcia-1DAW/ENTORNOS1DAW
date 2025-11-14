@@ -1,12 +1,16 @@
 package poo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sala {
     
-    String nombre;
-    int capacidad;
-    boolean pizarra;
-    String tipo;
-    boolean disponible;
+    private String nombre;
+    private int capacidad;
+    private boolean pizarra;
+    private String tipo;
+    private boolean disponible;
+    private List <PersonaPOO> personas;
 
     public Sala (String nombre, int capacidad, boolean pizarra, String tipo, boolean disponible) {
         this.nombre = nombre;
@@ -14,6 +18,7 @@ public class Sala {
         this.pizarra = pizarra;
         this.tipo = tipo;
         this.disponible = disponible;
+        this.personas = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -55,6 +60,10 @@ public class Sala {
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
+
+    public List<PersonaPOO> getPersonas() {
+        return personas;
+    }
     
     public void estaDisponible(boolean disponible) {
         if (disponible) {
@@ -90,5 +99,34 @@ public class Sala {
 
         System.out.println("Sala: " + nombre + " - " + capacidad + ". Se utiliza para " + tipo + ", " + textoPizarra + " de pizarra y " + textoDisponible + " disponible para su reserva");
         
+    }
+
+    public void entrarPersona(PersonaPOO p) {
+        if (personas.size() < capacidad) {
+            personas.add(p);
+            System.out.println(p.getNombre() + " ha entrado a la sala " + nombre);
+        } else {
+            System.out.println("No se puede añadir a " + p.getNombre() + " a la sala " + nombre + ". Sala llena.");
+        }
+    }
+
+    public void salirPersona(PersonaPOO p) {
+        if (personas.contains(p)) {
+            personas.remove(p);
+            System.out.println(p.getNombre() + " ha salido de la sala " + nombre);
+        } else {
+            System.out.println(p.getNombre() + " no está en la sala " + nombre);
+        }
+    }
+
+    public void mostrarPersonas() {
+        System.out.println("Personas en la sala " + nombre + ":");
+        if (personas.isEmpty()) {
+            System.out.println("  La sala está vacía.");
+        } else {
+            for (PersonaPOO p : personas) {
+                System.out.println("- " + p);
+            }
+        }
     }
 }
