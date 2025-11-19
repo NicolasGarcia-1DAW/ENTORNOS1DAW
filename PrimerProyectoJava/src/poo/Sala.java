@@ -11,6 +11,7 @@ public class Sala {
     private String tipo;
     private boolean disponible;
     private List <PersonaPOO> personas;
+    private PersonaPOO responsable;
 
     public Sala (String nombre, int capacidad, boolean pizarra, String tipo, boolean disponible) {
         this.nombre = nombre;
@@ -64,9 +65,17 @@ public class Sala {
     public List<PersonaPOO> getPersonas() {
         return personas;
     }
+
+    public void setResponsable(PersonaPOO responsable) {
+        this.responsable = responsable;
+    }
+
+    public PersonaPOO getResponsable() {
+        return responsable;
+    }
     
     public void estaDisponible(boolean disponible) {
-        if (disponible) {
+        if (this.disponible) {
             System.out.println("La sala está disponible para reserva");
         } else {
             System.out.println("La sala no está disponible para reserva");
@@ -74,7 +83,7 @@ public class Sala {
     }
 
     public void tienePizarra(boolean pizarra) {
-        if (pizarra) {
+        if (this.pizarra) {
             System.out.println("La sala tiene pizarra");
         } else {
             System.out.println("La sala no tiene pizarra");
@@ -84,6 +93,7 @@ public class Sala {
     public void informacion() {
         String textoPizarra;
         String textoDisponible;
+        String textoResponsable;
 
         if (pizarra) {
             textoPizarra = "dispone";
@@ -97,7 +107,13 @@ public class Sala {
             textoDisponible = "no está";
         }
 
-        System.out.println("Sala: " + nombre + " - " + capacidad + ". Se utiliza para " + tipo + ", " + textoPizarra + " de pizarra y " + textoDisponible + " disponible para su reserva");
+        if (responsable != null) {
+            textoResponsable = responsable.getNombre();
+        } else {
+            textoResponsable = "Sin responsable";
+        }
+
+        System.out.println("Sala: " + nombre + " - " + capacidad + ". Se utiliza para " + tipo + ", " + textoPizarra + " de pizarra y " + textoDisponible + " disponible para su reserva." + " Responsable de la sala: " + textoResponsable);
         
     }
 

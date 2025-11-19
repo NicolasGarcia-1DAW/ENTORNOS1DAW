@@ -62,9 +62,11 @@ public class Biblioteca {
         }
     }
 
-    public void informacion () {
-        System.out.println("Biblioteca: " + nombre + " - " + direccion + ". Abierto de " + horaApertura + " a " + horaCierre);
-    }
+    //Dejo este metodo comentado por si hay un futuro error
+    //He considerado añadir uno nuevo llamada mostrarInformacion (como indica el enunciado de la actividad)
+    // public void informacion () {
+    //     System.out.println("Biblioteca: " + nombre + " - " + direccion + ". Abierto de " + horaApertura + " a " + horaCierre);
+    // }
 
     public void addLibro(Libro libro) {
         libros.add(libro);
@@ -140,5 +142,45 @@ public class Biblioteca {
             totalPersonasSala = totalPersonasSala + sala.getPersonas().size();
         }
         System.out.println("Total de personas en todas las salas: " + totalPersonasSala);
+    }
+
+    public void crearSala(String nombre, int capacidad, boolean pizarra, String tipo, boolean disponible) {
+        Sala nuevaSala = new Sala(nombre, capacidad, pizarra, tipo, disponible);
+        salas.add(nuevaSala);
+        System.out.println("Sala " + nombre + " creada dentro de la Biblioteca " + this.nombre);
+    }
+
+    public void registrarVisita(PersonaPOO p) {
+        System.out.println("La persona " + p.getNombre() + " ha entrado a la biblioteca " + nombre);
+    }
+
+    public void asignarResponsable(Sala s, PersonaPOO p) {
+        s.setResponsable(p);
+        System.out.println(p.getNombre() + " ha sido asignado como responsable de la sala " + s.getNombre());
+    }
+
+    public void mostrarInformacion() {
+        System.out.println("Información de la biblioteca");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Dirección: " + direccion);
+        System.out.println("Horario: abierto de " + horaApertura + " a " + horaCierre);
+
+        System.out.println("\nLibros disponibles:");
+        if (libros.isEmpty()) {
+            System.out.println("No hay libros disponibles");
+        } else {
+            for (Libro l : libros) {
+                l.informacion();
+            }
+        }
+
+        System.out.println("\nSalas de la biblioteca:");
+        if (salas.isEmpty()) {
+            System.out.println("No hay salas");
+        } else {
+            for (Sala s : salas) {
+                s.informacion();
+            }
+        }
     }
 }

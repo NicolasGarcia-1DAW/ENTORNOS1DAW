@@ -94,7 +94,7 @@ public class Libro {
     }
 
     public void informacion() {
-    System.out.print("\nLibro: " + titulo + " - " + editorial + " (" + anyo + "). " + idioma + ", " + numPaginas + " páginas. ");
+    System.out.println("Libro: " + titulo + " - " + editorial + " (" + anyo + "). " + idioma + ", " + numPaginas + " páginas. ");
         if (disponible) {
             System.out.println("Está disponible.");
         }
