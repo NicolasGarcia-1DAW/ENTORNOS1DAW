@@ -138,7 +138,7 @@ public class Sala {
     public void mostrarPersonas() {
         System.out.println("Personas en la sala " + nombre + ":");
         if (personas.isEmpty()) {
-            System.out.println("  La sala está vacía.");
+            System.out.println(" La sala está vacía.");
         } else {
             for (PersonaPOO p : personas) {
                 System.out.println("- " + p);
