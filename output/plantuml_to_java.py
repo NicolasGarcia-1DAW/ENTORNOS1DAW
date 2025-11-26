@@ -1,3 +1,11 @@
+# Para ejecutar este código tenemos que escribir en la terminal (estando en el cd donde se encuentran ambos archivos):
+# phyton nombre_archivo_script.py nombre_archivo_uml.puml lugar
+# Para elegir el lugar debemos lindicar lo siguiente (sustituyendo lugar por):
+#   --> dejarlo vacio, crea una carpeta por defecto que contiene los archivos .java generados en el cd que estemos (que lo ejecutamos)
+# . --> un punto, crea los archivos.java directamente en el cd que estemos
+# ./nombre_carpeta ---> crea una carpeta con el nombre nombre_carpeta y los archivos .java dentro de esa carpeta
+# En el caso de mis archivos actuales del repo ENTORNOS sería: phyton plantuml_to_java.py poo.puml .
+
 import re
 import os
 import sys
