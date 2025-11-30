@@ -1,5 +1,5 @@
 # Para ejecutar este código tenemos que escribir en la terminal (estando en el cd donde se encuentran ambos archivos):
-# phyton nombre_archivo_script.py nombre_archivo_uml.puml lugar
+# python nombre_archivo_script.py nombre_archivo_uml.puml lugar
 # Para elegir el lugar debemos lindicar lo siguiente (sustituyendo lugar por):
 #   --> dejarlo vacio, crea una carpeta por defecto que contiene los archivos .java generados en el cd que estemos (que lo ejecutamos)
 # . --> un punto, crea los archivos.java directamente en el cd que estemos
