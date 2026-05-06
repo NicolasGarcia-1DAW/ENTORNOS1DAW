@@ -1,0 +1,9 @@
+com\pruebaintegracion\ServicioFacturacion.class
+com\pruebaintegracion\GestorInventario.class
+com\pruebaintegracion\App.class
+com\pruebaintegracion\Producto.class
+com\pruebaintegracion\Cliente.class
+com\pruebaintegracion\CalculadoraFinanciera.class
+com\pruebaintegracion\Pedido.class
+com\pruebaintegracion\ProductoDigital.class
+com\pruebaintegracion\ProductoFisico.class
